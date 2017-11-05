@@ -1,0 +1,40 @@
+{
+  "name": "node-project-starter",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suxxus/start-node-project"
+  },
+  "author": "suxxus",
+  "license": "ISC",
+  "description": "node project starter, lint-tape ",
+  "scripts": {
+    "lint": "eslint --color --fix  src || true",
+    "test": "NODE_PATH=src tape src/tests | tap-colorize",
+    "coverage": "NODE_PATH=src `npm bin`/istanbul cover src/tests/index.js",
+    "coverall": "npm run-script coverage",
+    "start": "watch -p 'src/**/*.js' -c 'npm test & npm run lint'",
+    "check": "npm outdated --depth=0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "codeclimate-test-reporter": "0.5.0",
+    "coveralls": "3.0.0",
+    "eslint": "4.10.0",
+    "eslint-cli": "1.1.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-eslint": "4.0.0",
+    "eslint-plugin-import": "2.8.0",
+    "istanbul": "0.4.5",
+    "tap-colorize": "1.2.0",
+    "watch-cli": "0.2.3"
+  },
+  "keywords": [
+    "node",
+    "project"
+  ],
+  "dependencies": {
+    "tape": "4.8.0"
+  }
+}
